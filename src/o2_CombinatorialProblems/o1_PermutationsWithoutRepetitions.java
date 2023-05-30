@@ -19,8 +19,6 @@ public class o1_PermutationsWithoutRepetitions {
         used = new boolean[elements.length];
 
         permute(0);
-
-
     }
 
     private static void permute(int index) {
