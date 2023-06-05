@@ -1,5 +1,6 @@
 package o2_CombinatorialProblems;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -15,6 +16,8 @@ public class o1_PermutationsWithoutRepetitionsWithSwap {
         elements = scanner.nextLine().split("\\s+");
 
         permute(0);
+    System.out.println("*************");
+    Arrays.stream(elements).forEach(x -> System.out.print(x + " "));
     }
 
     private static void permute(int index) {
