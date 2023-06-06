@@ -6,11 +6,10 @@ import java.io.InputStreamReader;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class o7_CinemaOprimised {
+public class o7_CinemaOptimisedWithoutStringBuilder {
   private static List<String> friends = new ArrayList<>();
   private static String[] seats;
   private static String[] combinations;
-  private static final StringBuilder SB = new StringBuilder();
 
   private static boolean[] used;
 
@@ -18,6 +17,7 @@ public class o7_CinemaOprimised {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     friends = Arrays.stream(reader.readLine().split(", ")).collect(Collectors.toList());
+
     seats = new String[friends.size()];
 
     String criterion = reader.readLine();
@@ -37,7 +37,6 @@ public class o7_CinemaOprimised {
     used = new boolean[friends.size()];
 
     findSeats(0);
-    System.out.println(SB);
   }
 
   private static void findSeats(int index) {
@@ -58,15 +57,19 @@ public class o7_CinemaOprimised {
   }
 
   private static void getCombination() {
+    StringBuilder sb = new StringBuilder();
+
     int index = 0;
+
     for (String seat : seats) {
       if (seat != null) {
-        SB.append(seat).append(" ");
+        sb.append(seat).append(" ");
         continue;
       }
-      SB.append(combinations[index++]).append(" ");
+      sb.append(combinations[index++]).append(" ");
     }
-    SB.setLength(SB.length() - 1);
-    SB.append(System.lineSeparator());
+    sb.setLength(sb.length() - 1);
+    System.out.println(sb);
+    sb.setLength(0);
   }
 }
