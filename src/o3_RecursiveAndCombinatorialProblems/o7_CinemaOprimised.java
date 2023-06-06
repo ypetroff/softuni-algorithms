@@ -10,7 +10,7 @@ public class o7_CinemaOprimised {
   private static List<String> friends = new ArrayList<>();
   private static String[] seats;
   private static String[] combinations;
-  private static StringBuilder sb = new StringBuilder();
+  private static final StringBuilder SB = new StringBuilder();
 
   private static boolean[] used;
 
@@ -37,7 +37,7 @@ public class o7_CinemaOprimised {
     used = new boolean[friends.size()];
 
     findSeats(0);
-    System.out.println(sb);
+    System.out.println(SB);
   }
 
   private static void findSeats(int index) {
@@ -61,12 +61,12 @@ public class o7_CinemaOprimised {
     int index = 0;
     for (String seat : seats) {
       if (seat != null) {
-        sb.append(seat).append(" ");
+        SB.append(seat).append(" ");
         continue;
       }
-      sb.append(combinations[index++]).append(" ");
+      SB.append(combinations[index++]).append(" ");
     }
-    sb.setLength(sb.length() - 1);
-    sb.append(System.lineSeparator());
+    SB.setLength(SB.length() - 1);
+    SB.append(System.lineSeparator());
   }
 }
