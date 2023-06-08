@@ -10,7 +10,7 @@ import java.util.Arrays;
 * with the necessary format, namely minus sign before each negative,
 * and then print the positives. One final thing to consider is that the larger negative numbers are smaller.
 * */
-public class oo_CountSort {
+public class oo_CountSortExample {
   public static void main(String[] args) {
     int[] arr = {11, 22, 1, 2, 15, 6, 9, 0};
 
