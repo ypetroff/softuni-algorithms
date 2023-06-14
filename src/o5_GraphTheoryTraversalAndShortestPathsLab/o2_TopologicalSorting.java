@@ -1,3 +1,5 @@
+package o5_GraphTheoryTraversalAndShortestPathsLab;
+
 import java.util.*;
 
 public class o2_TopologicalSorting {

@@ -1,3 +1,5 @@
+package o5_GraphTheoryTraversalAndShortestPathsLab;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
