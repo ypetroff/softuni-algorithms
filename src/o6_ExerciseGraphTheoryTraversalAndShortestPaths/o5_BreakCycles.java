@@ -113,8 +113,7 @@ public class o5_BreakCycles {
     return copy;
   }
 
-  private static void removeEdge(
-      Map<String, List<String>> component, String node, String child) {
+  private static void removeEdge(Map<String, List<String>> component, String node, String child) {
 
     component.get(node).remove(child);
     component.get(child).remove(node);
@@ -187,9 +186,6 @@ public class o5_BreakCycles {
           VISITED.add(child);
           queue.offer(child);
         }
-//        if (VISITED.contains(end)) {
-//          return true;
-//        }
       }
     }
     return false;
