@@ -18,10 +18,10 @@ public class o5_BreakCycles {
 
     String input = reader.readLine();
 
-    while (input.length() > 0) {
+    while (input != null && !input.equals("")) {
       String[] split = input.split(" -> ");
       String node = split[0];
-      List<String> edges = Arrays.stream(split[1].split("\\s+")).toList();
+      List<String> edges = Arrays.stream(split[1].split("\\s+")).collect(Collectors.toList());
 
       GRAPH.putIfAbsent(node, new ArrayList<>());
       GRAPH.get(node).addAll(edges);
@@ -36,7 +36,10 @@ public class o5_BreakCycles {
       makeAcyclic(convertToMap(component));
     }
 
-    System.out.println(EDGES_TO_REMOVE.size());
+    System.out.println("Edges to remove: " + EDGES_TO_REMOVE.size());
+    for (String[] edge : EDGES_TO_REMOVE) {
+      System.out.printf("%s - %s%n", edge[0], edge[1]);
+    }
   }
 
   private static void addIndirectlyProvidedNodes() {
@@ -125,6 +128,7 @@ public class o5_BreakCycles {
     }
 
     if (CYCLES.contains(node)) {
+      hasCycles = true;
       return;
     }
 
