@@ -21,7 +21,7 @@ public class o5_BreakCycles {
     while (input != null && !input.equals("")) {
       String[] split = input.split(" -> ");
       String node = split[0];
-      List<String> edges = Arrays.stream(split[1].split("\\s+")).collect(Collectors.toList());
+      List<String> edges = Arrays.stream(split[1].split("\\s+")).toList();
 
       GRAPH.putIfAbsent(node, new ArrayList<>());
       GRAPH.get(node).addAll(edges);
